@@ -6,6 +6,7 @@ body {
   background-color:  #FDF2F2;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 div {
   display: block;
@@ -77,7 +78,7 @@ h6 {
   height: 100%;
   margin: 0 auto;
 }
-#adeptus {
+.adeptus {
   font-family: segoe ui; times; 
 }
 #download {
