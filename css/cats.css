@@ -15,13 +15,15 @@ body div#start {
   border-left: 3px solid #f1f1f1;
   border-right: 3px solid #f1f1f1;
   background-color: #fff; 
-  width: 90%;
-  min-width: 40em;
+  width: 90%; 
   height: 100%;
   padding: 1em 2em 8em 2em;
 }
 a {
 	color: green;
+}
+a:hover {
+  text-decoration: none;
 }
 /* a:visited {
   color:red;
@@ -29,6 +31,7 @@ a {
 small {
   color:grey;
   margin-left: 10px;
+  display: block;
 }
 h3 {
   font-family:Merriweather, segoe ui, Geneva, georgia;
@@ -83,9 +86,21 @@ h6 {
 }
 .btn {
   display: block;
-  margin: 0 auto;
+  margin: 12px auto;
+  font-weight: bold;
+  color: green;
 } 
+.btn[disabled] {
+  color: #ccc;
+}
 input#file {
   margin: 0 auto;
   background-color: #fff;
+}
+
+@media only screen and (max-width: 720px) {
+  body div#start {
+    padding: 0;
+    width: 100%;
+  }
 }

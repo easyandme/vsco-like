@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="maxim-xu">
-<title>Audio Cat Index</title>
+<title>VSCO-like Presets Online</title>
 <link href='http://fonts.useso.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/cats.css">
@@ -33,7 +33,8 @@
 </div>
 </div>
 <footer id="footer">  
-<small id="adeptus">Processed with <abbr title="laziness mostly Orz">CamanJS</abbr> by <a style="color:grey;" target="_blank" href="http://github.com/maxim-xu">adeptus</a></small><br>
+<small>Made by <a style="color:grey;" target="_blank" href="http://github.com/maxim-xu">adeptus</a></small>
+<small id="adeptus">Powered by <a href="http://github.com/meltingice/CamanJS" target="_blank">CamanJS</a></small> 
 <section>
 <a target="_blank" href="http://instagram.com/easyandme" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/instagram-icon.png" alt="Instagram" class="social" title="Instagram"></a>
 <a target="_blank" href="http://500px.com/undertour" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/500px.png" alt="500px" class="social" title="500px"></a>
@@ -59,8 +60,8 @@
         c.width = img.naturalWidth;
         c.height = img.naturalHeight; 
         context.drawImage(img, 0, 0, c.width, c.height);
-        c.style.width = '400px';
-        c.style.height = 400 * c.height / c.width + 'px'; 
+        c.style.width = '320px';
+        c.style.height = 320 * c.height / c.width + 'px'; 
     }
     img.src = 'img/5.jpg'; 
 
@@ -70,22 +71,22 @@
         output.width = img2.naturalWidth;
         output.height = img2.naturalHeight;
         outputImage.drawImage(img2, 0, 0, output.width, output.height);
-        output.style.width = '400px';
-        output.style.height = 400 * output.height / output.width + 'px'; 
+        output.style.width = '320px';
+        output.style.height = 320 * output.height / output.width + 'px'; 
     }
     img2.src = img.src;  
 
     document.getElementById('file').onchange=function(){   
-            document.getElementById('dlbtn').disabled = true;
            var filereader = new FileReader();
            filereader.onload = function(e) { 
+                document.getElementById('dlbtn').disabled = true;
                var img = new Image();
                img.onload = function() {    
                     c.width = img.naturalWidth;
                     c.height = img.naturalHeight; 
                     context.drawImage(img, 0, 0, c.width, c.height);
-                    c.style.width = '400px';
-                    c.style.height = 400 * c.height / c.width + 'px';  //re-initialize
+                    c.style.width = '320px';
+                    c.style.height = 320 * c.height / c.width + 'px';  //re-initialize
                }  // Set src from upload, original byte sequence   
                
                var img2 = new Image();
@@ -93,8 +94,8 @@
                    output.width = img2.naturalWidth;
                    output.height = img2.naturalHeight;
                    outputImage.drawImage(img2, 0, 0, output.width, output.height);
-                   output.style.width = '400px';
-                   output.style.height = 400 * output.height / output.width + 'px'; 
+                   output.style.width = '320px';
+                   output.style.height = 320 * output.height / output.width + 'px'; 
                }  // re-initialize
                img2.src = img.src = e.target.result; 
            };
