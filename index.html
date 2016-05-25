@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="maxim-xu">
+<title>Audio Cat Index</title>
+<link href='http://fonts.useso.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/cats.css">
+</head>
+<body>
+<div id="start">
+<div class="row">
+<h3 class="col-xs-12 col-md-12 col-lg-12">VSCO-like Presets Online</h3>
+<h6 class="text-muted col-xs-12 col-md-12 col-lg-12">Make VSCO-like Photos without Installing anything.</h6> 
+<div class="tops col-xs-12 col-md-6">
+
+    <canvas id="myCanvas">
+        
+    </canvas>
+    <button class="btn btn-default" id="convert"><a>Convert</a></button>
+
+</div>
+<div class="tops col-xs-12 col-md-6">
+
+    <canvas id="myOutput">
+        
+    </canvas>
+    <a id="download"><button class="btn btn-default" id="dlbtn">Download</button></a>
+</div>
+    <input type="file" id="file">
+</div>
+</div>
+<footer id="footer">  
+<small id="adeptus">Processed with <abbr title="laziness mostly Orz">CamanJS</abbr> by <a style="color:grey;" target="_blank" href="http://github.com/maxim-xu">adeptus</a></small><br>
+<section>
+<a target="_blank" href="http://instagram.com/easyandme" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/instagram-icon.png" alt="Instagram" class="social" title="Instagram"></a>
+<a target="_blank" href="http://500px.com/undertour" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/500px.png" alt="500px" class="social" title="500px"></a>
+<a target="_blank" href="http://flickr.com/photos/under_s" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/flickr.png" alt="Flickr" class="social" title="Flickr"></a>
+<a target="_blank" href="http://www.douban.com/people/fuckable/" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/douban.png" alt="douban" class="social" title="douban"></a>
+<a target="_blank" href="http://www.last.fm/user/undertour" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/lastfm.png" alt="Last.fm" class="social" title="Last.fm"></a>
+<a target="_blank" href="http://dribbble.com/easyandme" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/Dribbble.png" alt="dribbble" class="social" title="dribbble"></a>
+<a target="_blank" href="http://goodreads.com/user/show/23848446-maxim-xu-easyandme" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/goodreads.png" alt="GoodReads" class="social" title="GoodReads"></a>
+<a target="_blank" href="http://about.me/easyandme" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/img_aboutmeLogo.png" alt="aboutme page" class="social" title="aboutme page"></a> 
+</section>
+</footer>
+<script type="text/javascript" src="js/caman.full.js"></script>
+<script>
+
+    var c = document.getElementById('myCanvas'),
+    context = c.getContext('2d'); 
+    var output = document.getElementById('myOutput'),
+    outputImage = output.getContext('2d'); 
+    document.getElementById('dlbtn').disabled = true;
+
+    var img = new Image(); 
+    img.onload = function(){ 
+        c.width = img.naturalWidth;
+        c.height = img.naturalHeight; 
+        context.drawImage(img, 0, 0, c.width, c.height);
+        c.style.width = '400px';
+        c.style.height = 400 * c.height / c.width + 'px'; 
+    }
+    img.src = 'img/5.jpg'; 
+
+    var img2 = new Image();
+  
+    img2.onload = function(){ 
+        output.width = img2.naturalWidth;
+        output.height = img2.naturalHeight;
+        outputImage.drawImage(img2, 0, 0, output.width, output.height);
+        output.style.width = '400px';
+        output.style.height = 400 * output.height / output.width + 'px'; 
+    }
+    img2.src = img.src;  
+
+    document.getElementById('file').onchange=function(){   
+            document.getElementById('dlbtn').disabled = true;
+           var filereader = new FileReader();
+           filereader.onload = function(e) { 
+               var img = new Image();
+               img.onload = function() {    
+                    c.width = img.naturalWidth;
+                    c.height = img.naturalHeight; 
+                    context.drawImage(img, 0, 0, c.width, c.height);
+                    c.style.width = '400px';
+                    c.style.height = 400 * c.height / c.width + 'px';  //re-initialize
+               }  // Set src from upload, original byte sequence   
+               
+               var img2 = new Image();
+               img2.onload = function(){  
+                   output.width = img2.naturalWidth;
+                   output.height = img2.naturalHeight;
+                   outputImage.drawImage(img2, 0, 0, output.width, output.height);
+                   output.style.width = '400px';
+                   output.style.height = 400 * output.height / output.width + 'px'; 
+               }  // re-initialize
+               img2.src = img.src = e.target.result; 
+           };
+           filereader.readAsDataURL(this.files[0]); 
+           document.getElementById('convert').disabled = false;
+       }
+
+ 
+ 
+    function startConvert() {  
+            Caman("#myOutput", function () { 
+              this.reloadCanvasData(); 
+              this.curves('rgb', [0, 19], [47, 76], [125, 138], [187, 174], [250, 216], [255, 219]);
+              this.curves('r', [0, 0], [61, 25], [166, 159], [250, 248], [255, 251]);
+              this.curves('g', [0, 0], [36, 26], [76, 62], [124, 122], [184, 199], [219, 230], [255, 255]);
+              this.curves('b', [0, 0], [62, 60], [187, 185], [255, 255]); 
+              this.render(); 
+            }); 
+            document.getElementById('convert').disabled = true;
+            document.getElementById('dlbtn').disabled = false;
+    }
+
+    function download() {
+    var dt = output.toDataURL('image/jpeg', .92);
+    this.href = dt; //this may not work in the future..
+    }
+
+    document.getElementById('download').addEventListener('click', download, false);
+    document.getElementById('convert').addEventListener('click', startConvert, false);
+
+</script>
+</body>
+</html>
