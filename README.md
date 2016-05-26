@@ -1,5 +1,5 @@
-#Audio Cat Index
-This static page briefly introduces the index of Audio Cat and recently shared audiobooks on it
+#VSCO-like Presets
+This static page allows you to apply VSCO-like filters without installing anything. 
 
 visit <a href="http://maxim-xu.github.io/vsco-like/" target="_blank">Index Page</a> 
 
