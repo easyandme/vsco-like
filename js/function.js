@@ -43,6 +43,7 @@
             $('.filter').not(this).removeClass('selected');
             filter = this.id; 
             this.classList.add('selected'); 
+            document.getElementById('dlbtn').disabled = true;
             window[filter]();
         }; 
     } 
