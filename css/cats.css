@@ -1,6 +1,15 @@
-/*
-@2015 copyright maxim-xu
-*/
+@font-face {
+    font-family: 'ralewaymedium';
+    src: url('../fonts/raleway-medium-webfont.eot');
+    src: url('../fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-medium-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-medium-webfont.woff') format('woff'),
+         url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+
 html {
   overflow-x: hidden;
 }
@@ -28,21 +37,26 @@ a {
 a:hover {
   text-decoration: none;
 }
-/* a:visited {
-  color:red;
-} */
+ul {
+  margin-top: 20px;
+  list-style-type: none;
+}
+ul li {
+  float: left;
+  margin-left: 20px;
+}
 small {
   color:grey;
   margin-left: 10px;
   display: block;
 }
 h3 {
-  font-family:Merriweather, segoe ui, Geneva, georgia;
+  font-family: Merriweather, segoe ui, Geneva, georgia;
   font-weight:bold;
   text-align:center;
 }
 h5 {
-  font-family:Times New Roman, sans-serif;
+  font-family: 'ralewaymedium', sans-serif;
   color:brown;
 }
 h6 {
@@ -51,7 +65,7 @@ h6 {
 } 
 .tops {
   margin-top: 37px;
-  font-family: segoe ui, Geneva;
+  font-family: 'ralewaymedium', segoe ui, Geneva;
   text-align:center;
 }  
 .social {
@@ -81,7 +95,7 @@ h6 {
   margin: 0 auto;
 }
 .adeptus {
-  font-family: segoe ui; times; 
+  font-family: 'ralewaymedium', segoe ui; times; 
 }
 #download {
   cursor: pointer;
@@ -102,10 +116,16 @@ input#file {
   background-color: #fff;
   margin-top: 30px;
 }
+button#provia {
+  color: #2498DC;
+}
 
 @media only screen and (max-width: 720px) {
   body div#start {
     padding: 0;
+    width: 100%;
+  }
+  #footer {
     width: 100%;
   }
 }

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="maxim-xu">
-<meta name="keywords" content="vsco, vscolike, vscojs, vscopresets, onlinepresets">
-<meta name="description" content="VSCO-like presets online. Apply vsco-like presets online without installing anything. Simple and fast.">
+<meta name="keywords" content="vsco, vscolike, presets, freepresets, filmpresets, vscojs, vscopresets, onlinepresets">
+<meta name="description" content="VSCO-like film presets online. Apply vsco-like presets online without installing anything. Simple and fast. Completely free.">
 <title>VSCO-like Presets Online</title>
 <link href='http://fonts.useso.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,8 +14,8 @@
 <body>
 <div id="start">
 <div class="row">
-<h3 class="col-xs-12 col-md-12 col-lg-12">VSCO-like Presets Online</h3>
-<h6 class="text-muted col-xs-12 col-md-12 col-lg-12">Make VSCO-like Photos without Installing anything.</h6> 
+<h3 class="col-xs-12 col-md-12 col-lg-12">VSCO-like Film Presets Online</h3>
+<h6 class="text-muted col-xs-12 col-md-12 col-lg-12">Apply VSCO-like Presets without Installing Anything.</h6> 
 <div class="tops col-xs-12 col-md-6">
 
     <canvas id="myCanvas">
@@ -33,10 +33,15 @@
 </div>
     <input type="file" id="file">
 </div>
+<ul>
+  <li><button class="btn btn-xs" id="provia">Fuji Provia 100F</button></li>
+  <li><button class="btn btn-xs">Fuji Provia 100F</button></li>
+  <li><button class="btn btn-xs">Fuji Provia 100F</button></li>
+</ul>
 </div>
 <footer id="footer">  
-<small class="adeptus">Presets provided by <a style="color:grey;text-decoration:underline;" target="_blank" href="http://github.com/maxim-xu/vsco-like/tree/gh-pages">Adeptus</a></small>
-<small class="adeptus">Powered by <a href="http://github.com/meltingice/CamanJS" target="_blank">CamanJS</a></small> 
+<small class="adeptus">Presets and Image Credit by <a style="text-decoration:underline;" target="_blank" href="http://github.com/maxim-xu/vsco-like/tree/gh-pages">Adeptus</a></small>
+<small class="adeptus">Powered by <a style="color:grey;" href="http://github.com/meltingice/CamanJS" target="_blank">CamanJS</a></small> 
 <section hidden>
 <a target="_blank" href="http://instagram.com/easyandme" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/instagram-icon.png" alt="Instagram" class="social" title="Instagram"></a>
 <a target="_blank" href="http://500px.com/undertour" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/500px.png" alt="500px" class="social" title="500px"></a>
@@ -108,12 +113,13 @@
 
  
  
-    function startConvert() {  
+    function provia() {  
             document.getElementById('convert').innerHTML = 'Rendering...';
             Caman("#myOutput", function () { 
               this.reloadCanvasData(); 
-              this.exposure(15);
-              this.saturation(5); 
+              this.exposure(12);
+              this.saturation(5);
+              this.noise(4); 
               this.curves('r', [0, 0], [44, 18], [115, 121], [179, 200], [255, 255]);
               this.curves('g', [0, 0], [43, 22], [114, 121], [177, 204], [219, 236], [255, 255]);
               this.curves('b', [0, 0], [43, 21], [112, 122], [176, 204], [255, 255]); 
@@ -132,11 +138,10 @@
     }
 
     document.getElementById('download').addEventListener('click', download, false);
-    document.getElementById('convert').addEventListener('click', startConvert, false);
+    document.getElementById('convert').addEventListener('click', provia, false);
 
 </script>
 <script async>
-  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
