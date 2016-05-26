@@ -73,7 +73,7 @@ h6 {
   border-left: 3px solid #f1f1f1;
   border-right: 3px solid #f1f1f1;
   background-color: #fff;
-  max-width: 50em;
+  width: 90%;
   min-width: 320px;
   height: 100%;
   margin: 0 auto;
@@ -92,7 +92,8 @@ h6 {
   color: green;
 } 
 .btn[disabled] {
-  color: #ccc;
+    background-color: #ccc;
+    color: black;
 }
 input#file {
   margin: 0 auto;

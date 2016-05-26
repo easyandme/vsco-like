@@ -63,7 +63,7 @@
         c.style.width = '320px';
         c.style.height = 320 * c.height / c.width + 'px'; 
     }
-    img.src = 'img/5.jpg'; 
+    img.src = 'img/8.jpg'; 
 
     var img2 = new Image();
   
@@ -79,6 +79,8 @@
     document.getElementById('file').onchange=function(){   
            var filereader = new FileReader();
            filereader.onload = function(e) { 
+                 document.getElementById('convert').disabled = false;
+                document.getElementById('convert').innerHTML = '<a>Convert</a>';
                 document.getElementById('dlbtn').disabled = true;
                var img = new Image();
                img.onload = function() {    
@@ -100,22 +102,26 @@
                img2.src = img.src = e.target.result; 
            };
            filereader.readAsDataURL(this.files[0]); 
-           document.getElementById('convert').disabled = false;
        }
 
  
  
     function startConvert() {  
+            document.getElementById('convert').innerHTML = 'Rendering...';
             Caman("#myOutput", function () { 
               this.reloadCanvasData(); 
-              this.curves('rgb', [0, 19], [47, 76], [125, 138], [187, 174], [250, 216], [255, 219]);
-              this.curves('r', [0, 0], [61, 25], [166, 159], [250, 248], [255, 251]);
-              this.curves('g', [0, 0], [36, 26], [76, 62], [124, 122], [184, 199], [219, 230], [255, 255]);
-              this.curves('b', [0, 0], [62, 60], [187, 185], [255, 255]); 
-              this.render(); 
+              this.exposure(15);
+              this.saturation(5); 
+              this.curves('r', [0, 0], [44, 18], [115, 121], [179, 200], [255, 255]);
+              this.curves('g', [0, 0], [43, 22], [114, 121], [177, 204], [219, 236], [255, 255]);
+              this.curves('b', [0, 0], [43, 21], [112, 122], [176, 204], [255, 255]); 
+              this.render(
+                    function() {
+                    document.getElementById('dlbtn').disabled = false;
+                    document.getElementById('convert').innerHTML = 'Rendered';
+                }); 
             }); 
             document.getElementById('convert').disabled = true;
-            document.getElementById('dlbtn').disabled = false;
     }
 
     function download() {
