@@ -32,7 +32,6 @@
     var buttonsCount = buttons.length;
     for (i = 0; i < buttonsCount; i++) { 
         buttons[i].onclick = function(e) {
-            refresh();
             img2.onload = function(){ 
                 output.width = img2.naturalWidth;
                 output.height = img2.naturalHeight;
@@ -46,6 +45,9 @@
             this.classList.add('selected'); 
             document.getElementById('dlbtn').disabled = true;
             window[filter]();
+            Caman("#myOutput", function(){  
+              this.reloadCanvasData();
+            }); 
         }; 
     } 
 
@@ -74,8 +76,11 @@
                    output.style.height = 360 * output.height / output.width + 'px'; 
                }  // re-initialize
                img2.src = img.src = e.target.result; 
+                Caman("#myOutput", function(){  
+                  this.reloadCanvasData();
+                }); 
            };
-           filereader.readAsDataURL(this.files[0]); 
+           filereader.readAsDataURL(this.files[0]);   
        }
 
  
@@ -83,6 +88,7 @@
 /* functions */ 
     function refresh() { 
             Caman("#myOutput", function(){ 
+              this.resetOriginalPixelData();
               this.reloadCanvasData();
             }); 
     }
