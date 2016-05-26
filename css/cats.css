@@ -116,6 +116,8 @@ input#file {
   background-color: #fff;
   margin-top: 40px;
   font-size: 16px;
+  transform: translateX(50px);
+  -webkit-transform: translateX(50px);
 }
 .selected {
   color: #2498DC; 
