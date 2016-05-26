@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="maxim-xu">
+<meta name="keywords" content="vsco, vscolike, vscojs, vscopresets, onlinepresets">
+<meta name="description" content="VSCO-like presets online. Apply vsco-like presets online without installing anything. Simple and fast.">
 <title>VSCO-like Presets Online</title>
 <link href='http://fonts.useso.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -33,9 +35,9 @@
 </div>
 </div>
 <footer id="footer">  
-<small class="adeptus">Made by <a style="color:grey;" target="_blank" href="http://github.com/maxim-xu">adeptus</a></small>
+<small class="adeptus">Presets provided by <a style="color:grey;text-decoration:underline;" target="_blank" href="http://github.com/maxim-xu/vsco-like/tree/gh-pages">Adeptus</a></small>
 <small class="adeptus">Powered by <a href="http://github.com/meltingice/CamanJS" target="_blank">CamanJS</a></small> 
-<section>
+<section hidden>
 <a target="_blank" href="http://instagram.com/easyandme" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/instagram-icon.png" alt="Instagram" class="social" title="Instagram"></a>
 <a target="_blank" href="http://500px.com/undertour" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/500px.png" alt="500px" class="social" title="500px"></a>
 <a target="_blank" href="http://flickr.com/photos/under_s" rel="me"><img src="http://audioc.at/wp-content/plugins/about-me/images/flickr.png" alt="Flickr" class="social" title="Flickr"></a>
@@ -60,8 +62,8 @@
         c.width = img.naturalWidth;
         c.height = img.naturalHeight; 
         context.drawImage(img, 0, 0, c.width, c.height);
-        c.style.width = '320px';
-        c.style.height = 320 * c.height / c.width + 'px'; 
+        c.style.width = '360px';
+        c.style.height = 360 * c.height / c.width + 'px'; 
     }
     img.src = 'img/9.jpg'; 
 
@@ -71,8 +73,8 @@
         output.width = img2.naturalWidth;
         output.height = img2.naturalHeight;
         outputImage.drawImage(img2, 0, 0, output.width, output.height);
-        output.style.width = '320px';
-        output.style.height = 320 * output.height / output.width + 'px'; 
+        output.style.width = '360px';
+        output.style.height = 360 * output.height / output.width + 'px'; 
     }
     img2.src = img.src;  
 
@@ -87,8 +89,8 @@
                     c.width = img.naturalWidth;
                     c.height = img.naturalHeight; 
                     context.drawImage(img, 0, 0, c.width, c.height);
-                    c.style.width = '320px';
-                    c.style.height = 320 * c.height / c.width + 'px';  //re-initialize
+                    c.style.width = '360px';
+                    c.style.height = 360 * c.height / c.width + 'px';  //re-initialize
                }  // Set src from upload, original byte sequence   
                
                var img2 = new Image();
@@ -96,8 +98,8 @@
                    output.width = img2.naturalWidth;
                    output.height = img2.naturalHeight;
                    outputImage.drawImage(img2, 0, 0, output.width, output.height);
-                   output.style.width = '320px';
-                   output.style.height = 320 * output.height / output.width + 'px'; 
+                   output.style.width = '360px';
+                   output.style.height = 360 * output.height / output.width + 'px'; 
                }  // re-initialize
                img2.src = img.src = e.target.result; 
            };
