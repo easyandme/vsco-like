@@ -94,9 +94,9 @@
               this.exposure(12);
               this.saturation(5);
               this.noise(3); 
-              this.curves('r', [0, 0], [44, 18], [115, 121], [179, 200], [255, 255]);
-              this.curves('g', [0, 0], [43, 22], [114, 121], [177, 204], [219, 236], [255, 255]);
-              this.curves('b', [0, 0], [43, 21], [112, 122], [176, 204], [255, 255]); 
+              this.curves('r', [0, 0], [44, 18], [115, 121], [255, 255]);
+              this.curves('g', [0, 0], [43, 22], [114, 121], [255, 255]);
+              this.curves('b', [0, 0], [43, 21], [112, 122], [255, 255]); 
               this.render(
                     function() {
                     document.getElementById('dlbtn').disabled = false;
