@@ -31,7 +31,8 @@
     var buttons = document.querySelectorAll('.filter'); 
     var buttonsCount = buttons.length;
     for (i = 0; i < buttonsCount; i++) { 
-        buttons[i].onclick = function(e) {  
+        buttons[i].onclick = function(e) {
+            refresh();
             img2.onload = function(){ 
                 output.width = img2.naturalWidth;
                 output.height = img2.naturalHeight;
@@ -39,7 +40,7 @@
                 output.style.width = '360px';
                 output.style.height = 360 * output.height / output.width + 'px'; 
             }
-            img2.src = img.src; 
+            img2.src = img.src;   
             $('.filter').not(this).removeClass('selected');
             filter = this.id; 
             this.classList.add('selected'); 
@@ -80,23 +81,16 @@
  
 
 /* functions */ 
-    function img2init() { 
-      var img2 = new Image(); 
-      img2.onload = function(){ 
-          output.width = img2.naturalWidth;
-          output.height = img2.naturalHeight;
-          outputImage.drawImage(img2, 0, 0, output.width, output.height);
-          output.style.width = '360px';
-          output.style.height = 360 * output.height / output.width + 'px'; 
-      }
-      img2.src = img.src; 
+    function refresh() { 
+            Caman("#myOutput", function(){ 
+              this.reloadCanvasData();
+            }); 
     }
 
     function provia() {  
             document.getElementById('convert').innerHTML = 'Rendering...';
-            Caman("#myOutput", function () {  
-              img2init();
-              this.reloadCanvasData(); 
+            Caman("#myOutput", function () { 
+              refresh();
               this.exposure(12);
               this.saturation(5);
               this.noise(3); 
@@ -115,8 +109,7 @@
     function vista() {
             document.getElementById('convert').innerHTML = 'Rendering...';
             Caman("#myOutput", function () { 
-              img2init();
-              this.reloadCanvasData(); 
+              refresh();
               this.noise(3); 
               this.curves('r', [0, 0], [42, 9], [78, 45], [126, 122], [182, 204], [255, 255]);
               this.curves('g', [0, 0], [36, 10], [76, 46], [124, 122], [181, 201], [219, 230], [255, 255]);
@@ -133,8 +126,7 @@
     function astia() {
             document.getElementById('convert').innerHTML = 'Rendering...';
             Caman("#myOutput", function () {  
-              img2init();
-              this.reloadCanvasData(); 
+              refresh();
               this.saturation(5);
               this.noise(3); 
               this.curves('r', [0, 0], [41, 25], [118, 124], [185, 195], [255, 255]);
@@ -151,9 +143,8 @@
 
     function neopan() { 
            document.getElementById('convert').innerHTML = 'Rendering...';
-           Caman("#myOutput", function () {  
-             img2init();
-             this.reloadCanvasData(); 
+           Caman("#myOutput", function () { 
+              refresh();
              this.greyscale();
              this.contrast(7); 
              this.noise(5); 
@@ -170,9 +161,10 @@
     function greys() { 
            document.getElementById('convert').innerHTML = 'Rendering...';
            Caman("#myOutput", function () {  
-             img2init();
-             this.reloadCanvasData(); 
-             this.greyscale().render(
+              refresh();
+             this.greyscale();
+             this.curves('rgb', [0, 0], [255, 255]); 
+             this.render(
                    function() {
                    document.getElementById('dlbtn').disabled = false;
                    document.getElementById('convert').innerHTML = 'Rendered';
