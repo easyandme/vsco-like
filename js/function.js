@@ -1,12 +1,10 @@
-
-    window.document.onload = provia();
-
+ 
     var c = document.getElementById('myCanvas'),
     context = c.getContext('2d'); 
     var output = document.getElementById('myOutput'),
     outputImage = output.getContext('2d'); 
     document.getElementById('dlbtn').disabled = true;
-
+/* initialize canvas */
     var img = new Image(); 
     img.onload = function(){ 
         c.width = img.naturalWidth;
@@ -17,8 +15,7 @@
     }
     img.src = 'img/9.jpg'; 
 
-    var img2 = new Image();
-  
+    var img2 = new Image(); 
     img2.onload = function(){ 
         output.width = img2.naturalWidth;
         output.height = img2.naturalHeight;
@@ -26,15 +23,39 @@
         output.style.width = '360px';
         output.style.height = 360 * output.height / output.width + 'px'; 
     }
-    img2.src = img.src;  
+    img2.src = img.src; 
 
-    document.getElementById('file').onchange=function(){   
+
+/* events  */
+    var filter;  
+    var buttons = document.querySelectorAll('.filter'); 
+    var buttonsCount = buttons.length;
+    for (i = 0; i < buttonsCount; i++) { 
+        buttons[i].onclick = function(e) {  
+            img2.onload = function(){ 
+                output.width = img2.naturalWidth;
+                output.height = img2.naturalHeight;
+                outputImage.drawImage(img2, 0, 0, output.width, output.height);
+                output.style.width = '360px';
+                output.style.height = 360 * output.height / output.width + 'px'; 
+            }
+            img2.src = img.src; 
+            $('.filter').not(this).removeClass('selected');
+            filter = this.id; 
+            this.classList.add('selected'); 
+            window[filter]();
+        }; 
+    } 
+
+
+
+
+    document.getElementById('file').onchange=function(){    
            var filereader = new FileReader();
            filereader.onload = function(e) { 
                  document.getElementById('convert').disabled = false;
                 document.getElementById('convert').innerHTML = '<a>Convert</a>';
                 document.getElementById('dlbtn').disabled = true;
-               var img = new Image();
                img.onload = function() {    
                     c.width = img.naturalWidth;
                     c.height = img.naturalHeight; 
@@ -42,7 +63,6 @@
                     c.style.width = '360px';
                     c.style.height = 360 * c.height / c.width + 'px';  //re-initialize
                }  // Set src from upload, original byte sequence   
-               
                var img2 = new Image();
                img2.onload = function(){  
                    output.width = img2.naturalWidth;
@@ -57,14 +77,28 @@
        }
 
  
- 
+
+/* functions */ 
+    function img2init() { 
+      var img2 = new Image(); 
+      img2.onload = function(){ 
+          output.width = img2.naturalWidth;
+          output.height = img2.naturalHeight;
+          outputImage.drawImage(img2, 0, 0, output.width, output.height);
+          output.style.width = '360px';
+          output.style.height = 360 * output.height / output.width + 'px'; 
+      }
+      img2.src = img.src; 
+    }
+
     function provia() {  
             document.getElementById('convert').innerHTML = 'Rendering...';
-            Caman("#myOutput", function () { 
+            Caman("#myOutput", function () {  
+              img2init();
               this.reloadCanvasData(); 
               this.exposure(12);
               this.saturation(5);
-              this.noise(4); 
+              this.noise(3); 
               this.curves('r', [0, 0], [44, 18], [115, 121], [179, 200], [255, 255]);
               this.curves('g', [0, 0], [43, 22], [114, 121], [177, 204], [219, 236], [255, 255]);
               this.curves('b', [0, 0], [43, 21], [112, 122], [176, 204], [255, 255]); 
@@ -77,10 +111,86 @@
             document.getElementById('convert').disabled = true;
     }
 
+    function vista() {
+            document.getElementById('convert').innerHTML = 'Rendering...';
+            Caman("#myOutput", function () { 
+              img2init();
+              this.reloadCanvasData(); 
+              this.noise(3); 
+              this.curves('r', [0, 0], [42, 9], [78, 45], [126, 122], [182, 204], [255, 255]);
+              this.curves('g', [0, 0], [36, 10], [76, 46], [124, 122], [181, 201], [219, 230], [255, 255]);
+              this.curves('b', [0, 0], [36, 10], [76, 46], [122, 118], [183, 206], [222, 235], [255, 255]); 
+              this.render(
+                    function() {
+                    document.getElementById('dlbtn').disabled = false;
+                    document.getElementById('convert').innerHTML = 'Rendered';
+                }); 
+            }); 
+            document.getElementById('convert').disabled = true;
+    }
+
+    function astia() {
+            document.getElementById('convert').innerHTML = 'Rendering...';
+            Caman("#myOutput", function () {  
+              img2init();
+              this.reloadCanvasData(); 
+              this.saturation(5);
+              this.noise(3); 
+              this.curves('r', [0, 0], [41, 25], [118, 124], [185, 195], [255, 255]);
+              this.curves('g', [0, 0], [40, 25], [119, 125], [182, 199], [255, 255]);
+              this.curves('b', [0, 0], [40, 26], [119, 124], [181, 200], [255, 255]); 
+              this.render(
+                    function() {
+                    document.getElementById('dlbtn').disabled = false;
+                    document.getElementById('convert').innerHTML = 'Rendered';
+                }); 
+            }); 
+            document.getElementById('convert').disabled = true;
+    }
+
+    function neopan() { 
+           document.getElementById('convert').innerHTML = 'Rendering...';
+           Caman("#myOutput", function () {  
+             img2init();
+             this.reloadCanvasData(); 
+             this.greyscale();
+             this.contrast(7); 
+             this.noise(5); 
+             this.curves('rgb', [0, 5], [17, 18], [85, 85], [255, 251]); 
+             this.render(
+                   function() {
+                   document.getElementById('dlbtn').disabled = false;
+                   document.getElementById('convert').innerHTML = 'Rendered';
+               }); 
+           }); 
+           document.getElementById('convert').disabled = true;
+    }
+
+    function greys() { 
+           document.getElementById('convert').innerHTML = 'Rendering...';
+           Caman("#myOutput", function () {  
+             img2init();
+             this.reloadCanvasData(); 
+             this.greyscale().render(
+                   function() {
+                   document.getElementById('dlbtn').disabled = false;
+                   document.getElementById('convert').innerHTML = 'Rendered';
+               }); 
+           }); 
+           document.getElementById('convert').disabled = true;
+    }
+
     function download() {
     var dt = output.toDataURL('image/jpeg', .92);
     this.href = dt; //this may not work in the future..
     }
 
     document.getElementById('download').addEventListener('click', download, false);
-    document.getElementById('convert').addEventListener('click', provia, false);
+    document.getElementById('convert').addEventListener('click', function(){
+      if (filter) {
+        window[filter]();
+      } else {
+        provia();
+      }
+    }, false);
+

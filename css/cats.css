@@ -29,7 +29,7 @@ body div#start {
   background-color: #fff; 
   width: 90%; 
   height: 100%;
-  padding: 1em 2em 8em 2em;
+  padding: 1em 2em 0em 2em;
 }
 a {
 	color: green;
@@ -40,14 +40,14 @@ a:hover {
 ul {
   margin-top: 20px;
   list-style-type: none;
+  height: 120px;
 }
 ul li {
   float: left;
   margin-left: 20px;
 }
 small {
-  color:grey;
-  margin-left: 10px;
+  color:grey; 
   display: block;
 }
 h3 {
@@ -82,8 +82,8 @@ h6 {
     -o-transform:scale(1.25); /* Opera */
     transform:scale(1.25);
 }
-#footer {
-  top:80em;
+#footer { 
+  position: relative;
   padding:2em;
   text-align: center;
   border-left: 3px solid #f1f1f1;
@@ -114,10 +114,11 @@ h6 {
 input#file {
   margin: 0 auto;
   background-color: #fff;
-  margin-top: 30px;
+  margin-top: 40px;
+  font-size: 16px;
 }
-button#provia {
-  color: #2498DC;
+.selected {
+  color: #2498DC; 
 }
 
 @media only screen and (max-width: 720px) {
@@ -127,5 +128,8 @@ button#provia {
   }
   #footer {
     width: 100%;
+  }
+  ul {
+    height: 200px;
   }
 }
