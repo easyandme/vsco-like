@@ -49,9 +49,6 @@
             this.classList.add('selected'); 
             document.getElementById('dlbtn').disabled = true;
             window[filter]();
-            Caman("#myOutput", function(){  
-              this.reloadCanvasData();
-            }); 
         }; 
     } 
 
