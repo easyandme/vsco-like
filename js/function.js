@@ -32,8 +32,11 @@
     var buttonsCount = buttons.length;
     for (i = 0; i < buttonsCount; i++) { 
         buttons[i].onclick = function(e) {
+            outputImage.clearRect(0, 0, output.width, output.height);
             img2.onload = function(){ 
-                outputImage.clearRect(0, 0, output.width, output.height);
+                Caman("#myOutput", function(){ 
+                  this.resetOriginalPixelData();
+                }); 
                 output.width = img2.naturalWidth;
                 output.height = img2.naturalHeight;
                 outputImage.drawImage(img2, 0, 0, output.width, output.height);
