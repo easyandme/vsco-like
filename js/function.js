@@ -45,6 +45,7 @@
             this.classList.add('selected'); 
             document.getElementById('dlbtn').disabled = true;
             window[filter]();
+            outputImage.clearRect(0, 0, output.width, output.height);
             Caman("#myOutput", function(){  
               this.reloadCanvasData();
             }); 
