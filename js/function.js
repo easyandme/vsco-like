@@ -35,9 +35,6 @@
             outputImage.clearRect(0, 0, output.width, output.height);
 
             img2.onload = function(){ 
-                Caman("#myOutput", function(){ 
-                  this.resetOriginalPixelData();
-                }); 
                  setTimeout(function() { 
                   output.width = img2.naturalWidth;
                   output.height = img2.naturalHeight;
