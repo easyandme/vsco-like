@@ -51,7 +51,7 @@ small {
   display: block;
 }
 h3 {
-  font-family: Merriweather, segoe ui, Geneva, georgia;
+  font-family: Segoe ui, 'ralewaymedium', Geneva, georgia;
   font-weight:bold;
   text-align:center;
 }
@@ -138,5 +138,6 @@ ul li button {
   }
   ul {
     height: 200px;
+    padding-left: 0;
   }
 }
