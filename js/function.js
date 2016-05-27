@@ -32,6 +32,7 @@
     var buttonsCount = buttons.length;
     for (i = 0; i < buttonsCount; i++) { 
         buttons[i].onclick = function(e) {
+            outputImage.clearRect(0, 0, output.width, output.height);
             img2.onload = function(){ 
                 output.width = img2.naturalWidth;
                 output.height = img2.naturalHeight;
@@ -45,7 +46,6 @@
             this.classList.add('selected'); 
             document.getElementById('dlbtn').disabled = true;
             window[filter]();
-            outputImage.clearRect(0, 0, output.width, output.height);
             Caman("#myOutput", function(){  
               this.reloadCanvasData();
             }); 
