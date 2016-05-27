@@ -41,6 +41,7 @@ ul {
   margin-top: 20px;
   list-style-type: none;
   height: 120px;
+  padding-right: 20px;
 }
 ul li {
   float: left;
@@ -84,7 +85,7 @@ h6 {
 }
 #footer { 
   position: relative;
-  padding:2em;
+  padding:2em 2em 0.5em 2em;
   text-align: center;
   border-left: 3px solid #f1f1f1;
   border-right: 3px solid #f1f1f1;
@@ -128,6 +129,12 @@ ul li button {
   background-color: #CCCCCC;
 }
 
+iframe#github { 
+    display: block;
+    margin: 0 auto;
+    transform: translateX(46px);
+}
+
 @media only screen and (max-width: 720px) {
   body div#start {
     padding: 0;
@@ -137,7 +144,7 @@ ul li button {
     width: 100%;
   }
   ul {
-    height: 200px;
+    height: 280px;
     padding-left: 0;
   }
 }
