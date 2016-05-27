@@ -33,7 +33,7 @@
     for (i = 0; i < buttonsCount; i++) { 
         buttons[i].onclick = function(e) {
             outputImage.clearRect(0, 0, output.width, output.height);
-
+            var img2 = new Image();
             img2.onload = function(){ 
                  setTimeout(function() { 
                   output.width = img2.naturalWidth;
