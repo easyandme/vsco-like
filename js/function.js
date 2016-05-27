@@ -35,14 +35,12 @@
             outputImage.clearRect(0, 0, output.width, output.height);
             var img2 = new Image();
             img2.onload = function(){ 
-                 setTimeout(function() { 
                   output.width = img2.naturalWidth;
                   output.height = img2.naturalHeight;
                   outputImage.drawImage(img2, 0, 0, output.width, output.height);
                   output.style.width = '360px';
                   output.style.height = 360 * output.height / output.width + 'px'; 
-                  window[filter]();
-                 }, 100);
+                  window[filter](); 
             }
             img2.src = img.src;   
             $('.filter').not(this).removeClass('selected');
