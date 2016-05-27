@@ -33,22 +33,25 @@
     for (i = 0; i < buttonsCount; i++) { 
         buttons[i].onclick = function(e) {
             outputImage.clearRect(0, 0, output.width, output.height);
+
             img2.onload = function(){ 
                 Caman("#myOutput", function(){ 
                   this.resetOriginalPixelData();
                 }); 
-                output.width = img2.naturalWidth;
-                output.height = img2.naturalHeight;
-                outputImage.drawImage(img2, 0, 0, output.width, output.height);
-                output.style.width = '360px';
-                output.style.height = 360 * output.height / output.width + 'px'; 
+                 setTimeout(function() { 
+                  output.width = img2.naturalWidth;
+                  output.height = img2.naturalHeight;
+                  outputImage.drawImage(img2, 0, 0, output.width, output.height);
+                  output.style.width = '360px';
+                  output.style.height = 360 * output.height / output.width + 'px'; 
+                  window[filter]();
+                 }, 100);
             }
             img2.src = img.src;   
             $('.filter').not(this).removeClass('selected');
             filter = this.id; 
             this.classList.add('selected'); 
             document.getElementById('dlbtn').disabled = true;
-            window[filter]();
         }; 
     } 
 
