@@ -6,7 +6,8 @@ visit <a href="http://maxim-xu.github.io/vsco-like/" target="_blank">Index Page<
 Powered by: <a href="http://github.com/meltingice/CamanJS" target="_blank">CamanJS</a>
 Library used: Bootstrap CSS
 
-<img src="./img/9.jpg" width="320" height="420" alt="before">
-
-<img src="./img/9c.jpg" width="320" height="420" alt="after">
+**Before**
+<img src="./img/9.jpg" width="320" height="320" alt="before">
+**After**
+<img src="./img/9c.jpg" width="320" height="320" alt="after">
  
