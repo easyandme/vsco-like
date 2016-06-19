@@ -5,3 +5,7 @@ visit <a href="http://maxim-xu.github.io/vsco-like/" target="_blank">Index Page<
 
 Powered by: <a href="http://github.com/meltingice/CamanJS" target="_blank">CamanJS</a>
 Library used: Bootstrap CSS
+
+![Before](./img/9.jpg)
+
+![After](./img/9c.jpg)
