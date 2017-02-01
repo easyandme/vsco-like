@@ -7,7 +7,7 @@
          url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
          url('../fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
     font-weight: normal;
-    font-style: normal; 
+    font-style: normal;
 }
 
 html {
@@ -26,8 +26,8 @@ body div#start {
   margin:0 auto;
   border-left: 3px solid #f1f1f1;
   border-right: 3px solid #f1f1f1;
-  background-color: #fff; 
-  width: 90%; 
+  background-color: #fff;
+  width: 90%;
   height: 100%;
   padding: 1em 2em 0em 2em;
 }
@@ -48,7 +48,7 @@ ul li {
   margin-left: 20px;
 }
 small {
-  color:grey; 
+  color:grey;
   display: block;
 }
 h3 {
@@ -63,12 +63,12 @@ h5 {
 h6 {
   font-size: 100%;
   text-align:center;
-} 
+}
 .tops {
   margin-top: 37px;
   font-family: 'ralewaymedium', segoe ui, Geneva;
   text-align:center;
-}  
+}
 .social {
   -webkit-transition: all .5s ease; /* Safari and Chrome */
   -moz-transition: all .5s ease; /* Firefox */
@@ -83,7 +83,7 @@ h6 {
     -o-transform:scale(1.25); /* Opera */
     transform:scale(1.25);
 }
-#footer { 
+#footer {
   position: relative;
   padding:2em 2em 0.5em 2em;
   text-align: center;
@@ -96,7 +96,7 @@ h6 {
   margin: 0 auto;
 }
 .adeptus {
-  font-family: 'ralewaymedium', segoe ui; times; 
+  font-family: 'ralewaymedium', segoe ui; times;
 }
 #download {
   cursor: pointer;
@@ -107,7 +107,7 @@ h6 {
   margin: 12px auto;
   font-weight: bold;
   color: green;
-} 
+}
 .btn[disabled] {
     background-color: #ccc;
     color: black;
@@ -121,7 +121,7 @@ input#file {
   -webkit-transform: translateX(50px);
 }
 .selected {
-  color: #2498DC; 
+  color: #2498DC;
   background-color: #FBD2B0;
 }
 
@@ -129,10 +129,14 @@ ul li button {
   background-color: #CCCCCC;
 }
 
-iframe#github { 
+iframe#github {
     display: block;
     margin: 0 auto;
     transform: translateX(46px);
+}
+div.fb-like {
+  display: block;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 720px) {
