@@ -134,9 +134,8 @@ iframe#github {
     margin: 0 auto;
     transform: translateX(46px);
 }
-div.fb-like {
-  display: block;
-  margin: 0 auto;
+td._2pir {
+  display: none;
 }
 
 @media only screen and (max-width: 720px) {
