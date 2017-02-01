@@ -6,7 +6,7 @@
               refresh();
               this.exposure(12);
               this.saturation(5);
-              this.noise(3);
+              this.noise(2);
               this.curves('r', [0, 0], [44, 18], [115, 121], [255, 255]);
               this.curves('g', [0, 0], [43, 22], [114, 121], [255, 255]);
               this.curves('b', [0, 0], [43, 21], [112, 122], [255, 255]);
@@ -203,7 +203,7 @@
            document.getElementById('convert').disabled = true;
     }
 
-    
+
 
 /* Get DOM */
     var c = document.getElementById('myCanvas'),

@@ -49,10 +49,17 @@
   <li><button class="btn btn-xs filter" id="greys">Greyscale</button></li>
 </ul>
 </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <footer id="footer">
-<iframe id="github" src="https://ghbtns.com/github-btn.html?user=maxim-xu&repo=vsco-like&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-<small class="adeptus">Made & Image Credit by <a style="text-decoration:underline;" target="_blank" href="https://instagram.com/easyandme">Adeptus</a></small>
-<small class="adeptus">Powered by <a style="color:grey;" href="http://github.com/meltingice/CamanJS" target="_blank">CamanJS</a></small>
+<div class="fb-like" data-href="http://easyand.me/vsco-like" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><iframe id="github" src="https://ghbtns.com/github-btn.html?user=maxim-xu&repo=vsco-like&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+<small class="adeptus">Made & Image Credit: <a style="text-decoration:underline;" target="_blank" href="https://easyand.me">EasyandMe</a></small>
 <section >
 </section>
 </footer>
@@ -68,7 +75,6 @@
   ga('create', 'UA-38451886-10', 'auto');
   ga('send', 'pageview');
 
-</script>
 </script>
 </body>
 </html>
