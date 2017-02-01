@@ -130,12 +130,12 @@ ul li button {
 }
 
 iframe#github {
-    display: block;
+    display: inline-block;
     margin: 0 auto;
     transform: translateX(46px);
 }
-td._2pir {
-  display: none;
+.fb_iframe_widget {
+    transform: translate(35px,-5px);
 }
 
 @media only screen and (max-width: 720px) {
