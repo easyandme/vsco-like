@@ -32,10 +32,11 @@
     <canvas id="myOutput" oncontextmenu="return false;" data-caman-hidpi-disabled="true">
 
     </canvas>
-    <button class="btn btn-default" id="dlbtn"><a id="download">Download</a></button>
+    <button class="btn btn-default" id="dlbtn"><a id="download" download>Download</a></button>
 </div>
     <input type="file" id="file" multiple accept='image/*'>
 </div>
+
 <ul>
   <li><button class="btn btn-xs filter selected" id="provia">Fuji Provia 100F Balance Cool</button></li>
   <li><button class="btn btn-xs filter" id="polaroid">Polaroid 669++</button></li>
@@ -67,6 +68,12 @@
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="js/caman.full.edited.min.js"></script>
 <script type="text/javascript" src="js/function.js"></script>
+
+<script>
+    $(function () {
+        setManualFrame();
+    });
+</script>
 <script async>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
