@@ -306,10 +306,7 @@
     this.href = dt; //this may not work in the future..
     }
 
-    document.getElementById('download').addEventListener('click', function (e) {
-        e.preventDefault();
-        download();
-    }, false);
+    document.getElementById('download').addEventListener('click', download, false);
     document.getElementById('convert').addEventListener('click', function(){
       if (filter) {
         window[filter]();
