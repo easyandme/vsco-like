@@ -1,3 +1,9 @@
+/**
+ *
+ *  Copyright @maxim-xu
+ *  RGB curve data simulated for VSCO film presets
+ *
+ */
 
 /* Fuji Provia 100F Balance Cool */
     function provia() {
@@ -235,6 +241,7 @@
 
 
 /* events  */
+
     var filter;
     var buttons = document.querySelectorAll('.filter');
     var buttonsCount = buttons.length;
