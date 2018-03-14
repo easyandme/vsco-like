@@ -18,34 +18,22 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 div {
   display: block;
 }
-body div#start {
-  margin:0 auto;
-  border-left: 3px solid #f1f1f1;
-  border-right: 3px solid #f1f1f1;
-  background-color: #fff;
-  width: 90%;
-  height: 100%;
-  padding: 1em 2em 0em 2em;
-}
 a {
-	color: green;
+	color: #fff;
 }
 a:hover {
   text-decoration: none;
 }
 ul {
-  margin-top: 20px;
-  list-style-type: none;
-  height: 120px;
-  padding-right: 20px;
 }
 ul li {
-  float: left;
-  margin-left: 20px;
 }
 small {
   color:grey;
@@ -83,18 +71,6 @@ h6 {
     -o-transform:scale(1.25); /* Opera */
     transform:scale(1.25);
 }
-#footer {
-  position: relative;
-  padding:2em 2em 0.5em 2em;
-  text-align: center;
-  border-left: 3px solid #f1f1f1;
-  border-right: 3px solid #f1f1f1;
-  background-color: #fff;
-  width: 90%;
-  min-width: 320px;
-  height: 100%;
-  margin: 0 auto;
-}
 .adeptus {
   font-family: 'ralewaymedium', segoe ui; times;
 }
@@ -104,51 +80,52 @@ h6 {
 }
 .btn {
   display: block;
-  margin: 12px auto;
+  margin: 0px auto;
   font-weight: bold;
-  color: green;
+  color: #fff;
 }
 .btn[disabled] {
     background-color: #ccc;
     color: black;
 }
 input#file {
-  margin: 0 auto;
-  background-color: #fff;
-  margin-top: 40px;
   font-size: 16px;
-  transform: translateX(50px);
-  -webkit-transform: translateX(50px);
-  overflow: hidden;
 }
 .selected {
-  color: #2498DC;
+  color: #dc972d;
   background-color: #FBD2B0;
 }
 
 ul li button {
   background-color: #CCCCCC;
 }
-
-iframe#github {
-    display: inline-block;
-    margin: 0 auto;
-    transform: translateX(46px);
+ul.filters {
+    text-align: center;
 }
-.fb_iframe_widget {
-    transform: translate(-50px,-5px);
+ul.filters li {
+    display: inline-block;
+    margin: 6px 2px;
+}
+
+nav .nav-wrapper {
+    padding: 0 20px;
+}
+
+form {
+    margin: 0 auto;
+    width: 280px;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.upload-btn {
+    background: #8a49de;
 }
 
 @media only screen and (max-width: 720px) {
-  body div#start {
-    padding: 0;
-    width: 100%;
-  }
-  #footer {
-    width: 100%;
-  }
-  ul {
-    height: 400px;
-    padding-left: 0;
-  }
+    .brand-logo {
+        font-size: 18px !important;
+    }
 }

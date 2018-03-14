@@ -10,16 +10,27 @@
 <meta name="keywords" content="vsco, vscolike, filters, presets, freepresets, filmpresets, vscojs, vscopresets, onlinepresets">
 <meta name="description" content="VSCO online. VSCO-like film filters online. VSCO presets online. Apply vsco-like presets online without installing anything. Simple and fast. Completely free.">
 <title>VSCO-like Filters Online</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/lib/materialize/css/materialize.min.css">
 <link rel="stylesheet" href="css/cats.css">
 </head>
 <body onunload="">
-<div id="start">
-<div class="row">
-<h3 class="col-xs-12 col-md-12 col-lg-12">VSCO-like Film Presets Online</h3>
-<h6 class="text-muted col-xs-12 col-md-12 col-lg-12">Apply VSCO-like Presets without Installing Anything.</h6>
-<h6 class="text-muted col-xs-12 col-md-12 col-lg-12">Recommended file size < 2MB.</h6>
-<div class="tops col-xs-12 col-md-6">
+
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <div>
+                <a href="#" class="brand-logo">VSCO-like Filters Online</a>
+            </div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="http://easyand.me">about</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="row main">
+
+<div class="tops col l6 m6 s12">
 
     <canvas id="myCanvas" oncontextmenu="return false;" data-caman-hidpi-disabled="true">
 
@@ -27,27 +38,38 @@
     <button class="btn btn-default" id="convert"><a>Convert</a></button>
 
 </div>
-<div class="tops col-xs-12 col-md-6">
+<div class="tops col l6 m6 s12">
 
     <canvas id="myOutput" oncontextmenu="return false;" data-caman-hidpi-disabled="true">
 
     </canvas>
     <a id="download" download><button class="btn btn-default" id="dlbtn">Download</button></a>
 </div>
-    <input type="file" id="file" multiple accept='image/*'>
 </div>
+<form action="#">
+    <div class="file-field input-field">
+        <div class="btn upload-btn">
+            <span>Upload</span>
+            <input type="file" id="file" accept='image/*'>
+        </div>
+        <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+        </div>
+    </div>
+</form>
 
-<ul>
+
+<ul class="filters">
   <li><button class="btn btn-xs filter selected" id="provia">Fuji Provia 100F Balance Cool</button></li>
   <li><button class="btn btn-xs filter" id="polaroid">Polaroid 669++</button></li>
   <li><button class="btn btn-xs filter" id="fujih">Fuji 400H+</button></li>
   <li><button class="btn btn-xs filter" id="vistawarm">Agfa Vista 800 Warm +</button></li>
   <li><button class="btn btn-xs filter" id="kodak">Kodak UltraMax 400 + Green</button></li>
   <li><button class="btn btn-xs filter" id="neopan">Fuji Neopan 400</button></li>
-  <li><button class="btn btn-xs filter" id="royal">Kodak Royal Gold 400 Soft Highs</button></li>
-  <li><button class="btn btn-xs filter" id="vista">Agfa Vista 100 Vibrant</button></li>
-  <li><button class="btn btn-xs filter" id="astia">Fuji Astia 100F</button></li>
-  <li><button class="btn btn-xs filter" id="greys">Greyscale</button></li>
+    <li><button class="btn btn-xs filter" id="royal">Kodak Royal Gold 400 Soft Highs</button></li>
+    <li><button class="btn btn-xs filter" id="vista">Agfa Vista 100 Vibrant</button></li>
+    <li><button class="btn btn-xs filter" id="astia">Fuji Astia 100F</button></li>
+    <li><button class="btn btn-xs filter" id="greys">Greyscale</button></li>
 </ul>
 </div>
 <div id="fb-root"></div>
@@ -58,13 +80,41 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<footer id="footer">
-<iframe id="github" src="https://ghbtns.com/github-btn.html?user=maxim-xu&repo=vsco-like&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-<div class="fb-like" data-href="http://easyand.me/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
-<small class="adeptus">Made & Image Credit: <a style="text-decoration:underline;" target="_blank" href="http://easyand.me">EasyandMe</a></small>
-<section >
-</section>
+
+
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">VSCO-like Presets Online</h5>
+                <p class="grey-text text-lighten-4">Apply VSCO-ish film presets without installing anything.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+
+                <ul>
+                    <li>
+                        <iframe id="github" src="https://ghbtns.com/github-btn.html?user=maxim-xu&repo=vsco-like&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                    </li>
+                    <li>
+                        <div class="fb-like" data-href="http://easyand.me/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                    </a></li>
+                    <!--<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>-->
+                    <!--<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2015 - 2018 Made & Image Credit: <a style="text-decoration:underline;" target="_blank" href="http://easyand.me">EasyandMe</a>
+            <div class="right">
+
+            </div>
+        </div>
+    </div>
 </footer>
+
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="js/caman.full.edited.min.js"></script>
 <script type="text/javascript" src="js/function.js"></script>
