@@ -267,7 +267,6 @@
 
 
 
-
     document.getElementById('file').onchange=function(){
            var filereader = new FileReader();
            filereader.onload = function(e) {
@@ -307,10 +306,23 @@
     }
 
 
+//**dataURL to blob**
+function dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+}
+
+
 /* download image */
     function download() {
-    var dt = output.toDataURL('image/jpeg', .92);
-    this.href = dt; //this may not work in the future..
+        var dt = output.toDataURL('image/jpeg', .92);
+        var blob = dataURLtoBlob(dt);
+        var url = URL.createObjectURL(blob);
+        this.href = url; //this may not work in the future..
     }
 
     document.getElementById('download').addEventListener('click', download, false);
