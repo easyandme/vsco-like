@@ -319,6 +319,7 @@ function download() {
 
 document.getElementById('download').addEventListener('click', download, false);
 document.getElementById('convert').addEventListener('click', function(){
+    document.getElementById('convert').innerHTML = 'Rendering...';
       if (filter) {
         window[filter]();
       } else {
